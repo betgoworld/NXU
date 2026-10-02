@@ -41,8 +41,26 @@ export const images = {
     height: 1448,
   },
   details: [
-    { src: null as string | null, alt: "Detalhe da textura do tecido NXU", width: 1200, height: 1500, label: "Tecido" },
-    { src: null as string | null, alt: "Detalhe do cós de cintura alta", width: 1200, height: 1500, label: "Cós" },
-    { src: null as string | null, alt: "Detalhe das costuras e acabamento", width: 1200, height: 1500, label: "Acabamento" },
+    {
+      src: "/images/nxu-detail-tecido.webp" as string | null,
+      alt: "Mão puxando o tecido verde-oliva da legging NXU, mostrando a elasticidade",
+      width: 1086,
+      height: 1448,
+      label: "Tecido",
+    },
+    {
+      src: "/images/nxu-detail-cos.webp" as string | null,
+      alt: "Cós de cintura alta da legging NXU verde-oliva, com costura em V",
+      width: 963,
+      height: 1284,
+      label: "Cós",
+    },
+    {
+      src: "/images/nxu-detail-acabamento.webp" as string | null,
+      alt: "Bolso lateral e costuras de acabamento da legging NXU verde-oliva",
+      width: 1086,
+      height: 1448,
+      label: "Acabamento",
+    },
   ],
 };

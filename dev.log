@@ -1,13 +1,12 @@
 ▲ Next.js 16.3.8 (Turbopack)
 - Local:         http://localhost:3100
 - Network:       http://192.0.2.2:3100
-✓ Ready in 1879ms
-✓ Running next.config.ts took 3.7s
+✓ Ready in 480ms
+✓ Running next.config.ts took 105ms
 
-○ Compiling / ...
- GET / 200 in 5.1s (next.js: 4.8s, application-code: 370ms)
-[browser] Image with src "/images/nxu-01.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+ GET / 200 in 710ms (next.js: 397ms, application-code: 313ms)
+[browser] Image with src "/images/nxu-detail-cos.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
- GET / 200 in 66ms (next.js: 9ms, application-code: 56ms)
-[browser] Image with src "/images/nxu-01.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+ GET / 200 in 67ms (next.js: 5ms, application-code: 62ms)
+[browser] Image with src "/images/nxu-detail-tecido.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
