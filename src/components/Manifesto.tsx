@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import { ScrollScale } from "./ScrollScale";
 import { Logo } from "./Logo";
 
 const LINES = ["Treinar muda você.", "Mover-se muda você.", "Escolher continuar muda você."];
@@ -11,14 +12,12 @@ export function Manifesto() {
           Next isn’t a place.
         </Reveal>
 
-        <h2 className="display-xl manifesto__big">
-          <Reveal as="span" className="line" delay={0.15} y={28}>
-            Next
-          </Reveal>
-          <Reveal as="span" className="line" delay={0.3} y={28}>
-            is you.
-          </Reveal>
-        </h2>
+        <ScrollScale>
+          <h2 className="display-xl manifesto__big">
+            <span className="line">Next</span>
+            <span className="line">is you.</span>
+          </h2>
+        </ScrollScale>
 
         <div className="manifesto__lines">
           {LINES.map((l) => (

@@ -7,7 +7,7 @@ export function ProductReveal() {
   return (
     <section className="section" aria-labelledby="move-title">
       <div className="container reveal-grid">
-        <Reveal y={32} amount={0.15}>
+        <Reveal y={40} amount={0.15} blur={false} duration={1.3}>
           <EditorialImage
             src={img.src}
             alt={img.alt}

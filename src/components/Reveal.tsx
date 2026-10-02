@@ -1,8 +1,10 @@
 "use client";
 
-import { m } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 
 export const EASE = [0.22, 1, 0.36, 1] as const;
+/** Curva usada pela Apple: começa decidida e pousa macio. */
+export const EASE_APPLE = [0.28, 0.11, 0.32, 1] as const;
 
 type Props = {
   children: React.ReactNode;
@@ -12,19 +14,32 @@ type Props = {
   duration?: number;
   className?: string;
   amount?: number;
+  /** Desfoque inicial que vira foco (estilo Apple). Desligue em blocos grandes de imagem. */
+  blur?: boolean;
 };
 
-/** Fade + translateY sutil quando entra na viewport. Uma única vez. */
-export function Reveal({ children, as = "div", delay = 0, y = 20, duration = 0.9, className, amount = 0.4 }: Props) {
+/** Fade + translateY + foco suave quando entra na viewport. Uma única vez. */
+export function Reveal({
+  children,
+  as = "div",
+  delay = 0,
+  y = 24,
+  duration = 1.1,
+  className,
+  amount = 0.4,
+  blur = true,
+}: Props) {
   const Tag = m[as];
+  const reduce = useReducedMotion();
+  const soft = blur && !reduce;
   return (
     <Tag
       className={className}
       data-reveal
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y, ...(soft ? { filter: "blur(10px)" } : {}) }}
+      whileInView={{ opacity: 1, y: 0, ...(soft ? { filter: "blur(0px)" } : {}) }}
       viewport={{ once: true, amount }}
-      transition={{ duration, delay, ease: EASE }}
+      transition={{ duration, delay, ease: EASE_APPLE }}
     >
       {children}
     </Tag>

@@ -1,30 +1,40 @@
 "use client";
 
-import { m } from "framer-motion";
+import { useRef } from "react";
+import { m, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { track } from "@/lib/analytics";
 import { ArrowButton } from "./ArrowButton";
-import { EASE } from "./Reveal";
+import { EASE_APPLE } from "./Reveal";
 import { scrollToWaitlist } from "./scroll";
 
-const enter = (delay: number, y = 20) => ({
-  initial: { opacity: 0, y },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.9, delay, ease: EASE },
-});
-
 export function Hero() {
+  const ref = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+
+  // Ao rolar, o conteúdo recua e se dissolve (como as aberturas de produto da Apple).
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.92]);
+  const opacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, -80]);
+
+  const enter = (delay: number, dy = 20) => ({
+    initial: { opacity: 0, y: dy, ...(reduce ? {} : { filter: "blur(12px)" }) },
+    animate: { opacity: 1, y: 0, ...(reduce ? {} : { filter: "blur(0px)" }) },
+    transition: { duration: 1.2, delay, ease: EASE_APPLE },
+  });
+
   return (
-    <section className="hero" id="top" aria-labelledby="hero-title">
-      <div className="hero__inner">
+    <section ref={ref} className="hero" id="top" aria-labelledby="hero-title">
+      <m.div className="hero__inner" style={reduce ? undefined : { scale, opacity, y }}>
         <m.p className="eyebrow hero__eyebrow" data-reveal {...enter(0.25, 10)}>
           A new fitness experience
         </m.p>
 
         <h1 id="hero-title" className="display">
-          <m.span className="line" data-reveal {...enter(0.45)}>
+          <m.span className="line" data-reveal {...enter(0.45, 28)}>
             Não criamos
           </m.span>
-          <m.span className="line" data-reveal {...enter(0.6)}>
+          <m.span className="line" data-reveal {...enter(0.62, 28)}>
             para quem você é hoje.
           </m.span>
         </h1>
@@ -48,7 +58,7 @@ export function Hero() {
           </ArrowButton>
           <p className="hero__note">Seja uma das primeiras a conhecer a NXU.</p>
         </m.div>
-      </div>
+      </m.div>
     </section>
   );
 }

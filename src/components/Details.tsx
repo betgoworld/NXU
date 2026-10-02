@@ -20,7 +20,7 @@ export function Details() {
 
         <div className="details__rail">
           {images.details.map((img, i) => (
-            <Reveal as="figure" key={img.label} className="details__item" delay={i * 0.12} amount={0.2}>
+            <Reveal as="figure" key={img.label} className="details__item" delay={i * 0.12} amount={0.2} blur={false} y={48} duration={1.3}>
               <EditorialImage
                 src={img.src}
                 alt={img.alt}

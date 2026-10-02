@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import { ScrollScale } from "./ScrollScale";
 import { Logo } from "./Logo";
 
 export function Statement() {
@@ -6,10 +7,12 @@ export function Statement() {
     <section className="section section--white statement" aria-label="Por que NXU">
       <div className="container">
         <div className="statement__block">
-          <Reveal as="h2" className="display" amount={0.6}>
-            <span className="line">Você não precisa</span>
-            <span className="line">de mais uma marca fitness.</span>
-          </Reveal>
+          <ScrollScale from={0.88}>
+            <h2 className="display">
+              <span className="line">Você não precisa</span>
+              <span className="line">de mais uma marca fitness.</span>
+            </h2>
+          </ScrollScale>
         </div>
 
         <div className="statement__block statement__block--short">

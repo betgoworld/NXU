@@ -6,13 +6,14 @@ type Common = {
   block?: boolean;
   cursor?: string;
   className?: string;
+  loading?: boolean;
 };
 
 type AsButton = Common & React.ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined };
 type AsLink = Common & React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
 
 export function ArrowButton(props: AsButton | AsLink) {
-  const { children, variant = "dark", block, cursor = "join", className = "", ...rest } = props;
+  const { children, variant = "dark", block, cursor = "join", className = "", loading, ...rest } = props;
   const cls = [
     "btn",
     variant === "light" && "btn--light",
@@ -26,9 +27,13 @@ export function ArrowButton(props: AsButton | AsLink) {
   const inner = (
     <>
       <span className="btn__label">{children}</span>
-      <span className="btn__arrow" aria-hidden="true">
-        →
-      </span>
+      {loading ? (
+        <span className="btn__spinner" aria-hidden="true" />
+      ) : (
+        <span className="btn__arrow" aria-hidden="true">
+          →
+        </span>
+      )}
     </>
   );
 

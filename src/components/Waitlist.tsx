@@ -8,8 +8,8 @@ import { deviceType, getAttribution } from "@/lib/attribution";
 import { isValidName, maskBrPhone, normalizeBrPhone } from "@/lib/phone";
 import { ArrowButton } from "./ArrowButton";
 import { Countdown } from "./Countdown";
-import { EASE, Reveal } from "./Reveal";
-import { WAITLIST_ID } from "./scroll";
+import { EASE_APPLE, Reveal } from "./Reveal";
+import { smoothScrollTo, WAITLIST_ID } from "./scroll";
 import { Logo } from "./Logo";
 
 type Status = "idle" | "loading" | "success";
@@ -93,6 +93,9 @@ export function Waitlist({ count }: { count: number | null }) {
       }
       track("waitlist_success", { utm_source: a.utm_source, utm_campaign: a.utm_campaign });
       setStatus("success");
+      // Leva a confirmação suavemente para o centro da tela.
+      const top = sectionRef.current?.getBoundingClientRect().top ?? 0;
+      if (Math.abs(top) > 40) window.setTimeout(() => smoothScrollTo(window.scrollY + top), 350);
     } catch {
       setErrors({ form: ERRORS.default });
       setStatus("idle");
@@ -110,8 +113,8 @@ export function Waitlist({ count }: { count: number | null }) {
           {status !== "success" ? (
             <m.div
               key="form"
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.5, ease: EASE }}
+              exit={{ opacity: 0, y: -16, scale: 0.98, filter: "blur(8px)" }}
+              transition={{ duration: 0.55, ease: EASE_APPLE }}
               style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}
             >
               <Reveal as="p" className="eyebrow waitlist__eyebrow">
@@ -216,7 +219,14 @@ export function Waitlist({ count }: { count: number | null }) {
                     </p>
                   ) : null}
 
-                  <ArrowButton type="submit" variant="light" block className="form__submit" disabled={status === "loading"}>
+                  <ArrowButton
+                    type="submit"
+                    variant="light"
+                    block
+                    className="form__submit"
+                    disabled={status === "loading"}
+                    loading={status === "loading"}
+                  >
                     {status === "loading" ? "Entrando…" : "Quero acesso antecipado"}
                   </ArrowButton>
 
@@ -238,17 +248,17 @@ export function Waitlist({ count }: { count: number | null }) {
             <m.div
               key="success"
               className="success"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.1, ease: EASE }}
+              initial={{ opacity: 0, y: 24, scale: 0.98, filter: "blur(10px)" }}
+              animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+              transition={{ duration: 1.1, delay: 0.05, ease: EASE_APPLE }}
               role="status"
               aria-live="polite"
             >
               <m.span
                 className="success__check"
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.6 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2, ease: EASE }}
+                transition={{ type: "spring", stiffness: 260, damping: 18, delay: 0.25 }}
                 aria-hidden="true"
               >
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
@@ -260,7 +270,7 @@ export function Waitlist({ count }: { count: number | null }) {
                     strokeLinejoin="round"
                     initial={{ pathLength: 0 }}
                     animate={{ pathLength: 1 }}
-                    transition={{ duration: 0.7, delay: 0.5, ease: EASE }}
+                    transition={{ duration: 0.6, delay: 0.55, ease: EASE_APPLE }}
                   />
                 </svg>
               </m.span>

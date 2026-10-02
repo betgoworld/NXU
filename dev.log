@@ -1,12 +1,10 @@
 ▲ Next.js 16.3.8 (Turbopack)
 - Local:         http://localhost:3100
 - Network:       http://192.0.2.2:3100
-✓ Ready in 480ms
-✓ Running next.config.ts took 105ms
+✓ Ready in 380ms
+✓ Running next.config.ts took 29ms
 
- GET / 200 in 710ms (next.js: 397ms, application-code: 313ms)
-[browser] Image with src "/images/nxu-detail-cos.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
- GET / 200 in 67ms (next.js: 5ms, application-code: 62ms)
-[browser] Image with src "/images/nxu-detail-tecido.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+ GET / 200 in 1679ms (next.js: 1279ms, application-code: 400ms)
+[waitlist] Supabase não configurado — cadastro simulado: { name: 'Ana Souza', phone: '+5522987654321' }
+ POST /api/waitlist 200 in 160ms (next.js: 112ms, application-code: 48ms)
+ GET / 200 in 98ms (next.js: 8ms, application-code: 91ms)
