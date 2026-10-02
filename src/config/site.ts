@@ -34,7 +34,12 @@ export function waitlistCountConfig() {
  * e preencha `src`. Enquanto `src` for null, um placeholder neutro é exibido.
  */
 export const images = {
-  hero: { src: null as string | null, alt: "Modelo vestindo conjunto NXU em estúdio", width: 1600, height: 2000 },
+  hero: {
+    src: "/images/nxu-01.webp" as string | null,
+    alt: "Modelo com top e calça flare rosa NXU sentada em uma arquibancada ao sol",
+    width: 1086,
+    height: 1448,
+  },
   details: [
     { src: null as string | null, alt: "Detalhe da textura do tecido NXU", width: 1200, height: 1500, label: "Tecido" },
     { src: null as string | null, alt: "Detalhe do cós de cintura alta", width: 1200, height: 1500, label: "Cós" },
