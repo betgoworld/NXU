@@ -4,7 +4,7 @@ const LINES = ["Treinar muda você.", "Mover-se muda você.", "Escolher continua
 
 export function Manifesto() {
   return (
-    <section className="section section--dark manifesto" aria-label="Manifesto">
+    <section data-tone="dark" className="section section--dark manifesto" aria-label="Manifesto">
       <div className="container">
         <Reveal as="p" className="eyebrow manifesto__eyebrow">
           Next isn’t a place.

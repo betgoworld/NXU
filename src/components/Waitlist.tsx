@@ -103,7 +103,7 @@ export function Waitlist({ count }: { count: number | null }) {
     : null;
 
   return (
-    <section ref={sectionRef} id={WAITLIST_ID} className="section section--dark waitlist" aria-labelledby="waitlist-title">
+    <section data-tone="dark" ref={sectionRef} id={WAITLIST_ID} className="section section--dark waitlist" aria-labelledby="waitlist-title">
       <div className="waitlist__inner">
         <AnimatePresence mode="wait" initial={false}>
           {status !== "success" ? (

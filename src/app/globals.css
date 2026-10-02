@@ -147,6 +147,11 @@ input {
   text-transform: uppercase;
 }
 
+.section:not(.section--dark) .signature__mark,
+.hero__signature {
+  color: var(--black);
+}
+
 .signature__mark {
   font-size: clamp(40px, 6vw, 88px);
   font-weight: 600;
@@ -269,9 +274,14 @@ input {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: var(--white);
-  mix-blend-mode: difference;
+  color: var(--black);
   pointer-events: none;
+  transition: color 0.35s var(--ease);
+}
+
+/* Sobre seções escuras o logo e o CTA ficam branco puro; nas claras, preto puro. */
+.header--on-dark {
+  color: var(--white);
 }
 
 .header > * {

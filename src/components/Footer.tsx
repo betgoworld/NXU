@@ -5,7 +5,7 @@ import { track } from "@/lib/analytics";
 
 export function Footer() {
   return (
-    <footer className="footer">
+    <footer data-tone="dark" className="footer">
       <div className="footer__brand">
         <strong>NXU</strong>
         <span>Next You</span>
