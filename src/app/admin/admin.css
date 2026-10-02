@@ -1,0 +1,267 @@
+.admin {
+  min-height: 100vh;
+  background: #fafaf9;
+  color: #111;
+  font-size: 14px;
+}
+
+.admin-main {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 32px clamp(16px, 3vw, 40px) 80px;
+}
+
+.admin-muted {
+  color: #777;
+}
+
+.admin-brand strong {
+  font-size: 20px;
+  letter-spacing: -0.04em;
+}
+
+.admin-brand span {
+  margin-left: 6px;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #777;
+}
+
+.admin-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e7e6e2;
+}
+
+.admin-top__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.admin-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 16px;
+  border: 1px solid #dcdbd6;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.admin-btn:hover {
+  border-color: #111;
+}
+
+.admin-btn--primary {
+  background: #111;
+  border-color: #111;
+  color: #fff;
+}
+
+.admin-kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  margin: 32px 0;
+  background: #e7e6e2;
+  border: 1px solid #e7e6e2;
+}
+
+.admin-kpi {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px;
+  background: #fff;
+}
+
+.admin-kpi strong {
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.admin-breakdowns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.admin-breakdown h2 {
+  margin: 0 0 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.admin-breakdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.admin-breakdown li a {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #efeeea;
+}
+
+.admin-breakdown__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-breakdown__value {
+  font-variant-numeric: tabular-nums;
+}
+
+.admin-breakdown__bar {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 1px;
+  background: #111;
+}
+
+.admin-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.admin-filters input,
+.admin-filters select {
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #dcdbd6;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 14px;
+}
+
+.admin-filters input[name="q"] {
+  flex: 1 1 220px;
+}
+
+.admin-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #777;
+}
+
+.admin-count {
+  margin: 20px 0 8px;
+}
+
+.admin-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #e7e6e2;
+  background: #fff;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid #f0efeb;
+  vertical-align: top;
+}
+
+.admin-table th {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #777;
+  background: #fafaf9;
+}
+
+.admin-table a:hover {
+  text-decoration: underline;
+}
+
+.admin-nowrap {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.admin-empty {
+  text-align: center !important;
+  color: #777;
+  padding: 48px !important;
+}
+
+.admin-pager {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.admin-denied {
+  display: grid;
+  gap: 16px;
+  justify-items: start;
+}
+
+.admin-login {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.admin-login__card {
+  width: 100%;
+  max-width: 360px;
+  display: grid;
+  gap: 16px;
+}
+
+.admin-login__card label {
+  display: grid;
+  gap: 6px;
+  color: #777;
+  font-size: 12px;
+}
+
+.admin-login__card input {
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid #dcdbd6;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #111;
+  background: #fff;
+}
+
+.admin-login__card .admin-btn {
+  height: 48px;
+}
+
+.admin-error {
+  margin: 0;
+  color: #c62828;
+}
