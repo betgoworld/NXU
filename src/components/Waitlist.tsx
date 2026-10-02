@@ -10,6 +10,7 @@ import { ArrowButton } from "./ArrowButton";
 import { Countdown } from "./Countdown";
 import { EASE, Reveal } from "./Reveal";
 import { WAITLIST_ID } from "./scroll";
+import { Logo } from "./Logo";
 
 type Status = "idle" | "loading" | "success";
 type Errors = { name?: string; phone?: string; form?: string };
@@ -269,7 +270,7 @@ export function Waitlist({ count }: { count: number | null }) {
               <p className="success__text">Quando chegar a hora, você vai saber primeiro.</p>
 
               <span className="signature success__signature">
-                <span className="signature__mark">NXU</span>
+                <Logo className="signature__mark" />
                 <span className="signature__sub">Next You</span>
               </span>
 

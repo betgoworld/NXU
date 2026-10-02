@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import { Logo } from "./Logo";
 
 const LINES = ["Treinar muda você.", "Mover-se muda você.", "Escolher continuar muda você."];
 
@@ -32,7 +33,7 @@ export function Manifesto() {
 
         <Reveal className="manifesto__end" amount={0.6}>
           <span className="signature">
-            <span className="signature__mark">NXU</span>
+            <Logo className="signature__mark" />
             <span className="signature__sub">Next You.</span>
           </span>
         </Reveal>

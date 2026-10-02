@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { logoSvg } from "@/components/Logo";
 
 export const alt = "NXU — NEXT YOU. Your Next Version.";
 export const size = { width: 1200, height: 630 };
@@ -22,7 +23,13 @@ export default function OgImage() {
         }}
       >
         <div style={{ display: "flex", justifyContent: "space-between", fontSize: 22, letterSpacing: 6 }}>
-          <span style={{ fontWeight: 700, letterSpacing: -1, fontSize: 30 }}>NXU</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            alt="NXU"
+            width={84}
+            height={30}
+            src={`data:image/svg+xml;base64,${Buffer.from(logoSvg("#fff")).toString("base64")}`}
+          />
           <span style={{ color: "#777" }}>COMING SOON</span>
         </div>
         <div style={{ display: "flex", flexDirection: "column", fontSize: 120, lineHeight: 0.92, letterSpacing: -6 }}>

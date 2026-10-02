@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createBrowserSupabase } from "@/lib/supabase/browser";
+import { Logo } from "@/components/Logo";
 
 export default function AdminLogin() {
   const router = useRouter();
@@ -29,7 +30,7 @@ export default function AdminLogin() {
     <main className="admin-login">
       <form onSubmit={onSubmit} className="admin-login__card">
         <div className="admin-brand">
-          <strong>NXU</strong> <span>Admin</span>
+          <Logo className="admin-logo" /> <span>Admin</span>
         </div>
         <label>
           E-mail

@@ -5,6 +5,7 @@ import { m } from "framer-motion";
 import { track } from "@/lib/analytics";
 import { scrollToWaitlist, WAITLIST_ID } from "./scroll";
 import { EASE } from "./Reveal";
+import { Logo } from "./Logo";
 
 /** Verifica se há uma área escura (data-tone="dark") atrás do header. */
 function useOnDark() {
@@ -45,7 +46,7 @@ export function Header() {
       transition={{ duration: 1, ease: EASE }}
     >
       <a href="#top" className="brand" aria-label="NXU — Next You, início">
-        <span className="brand__mark">NXU</span>
+        <Logo className="brand__mark" title={null} />
         <span className="brand__sub">Next You</span>
       </a>
       <a

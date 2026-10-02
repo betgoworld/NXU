@@ -1,8 +1,9 @@
 ▲ Next.js 16.3.8 (Turbopack)
 - Local:         http://localhost:3100
 - Network:       http://192.0.2.2:3100
-✓ Ready in 1876ms
-✓ Running next.config.ts took 3.0s
+✓ Ready in 431ms
+✓ Running next.config.ts took 32ms
 
- GET / 200 in 3.7s (next.js: 3.3s, application-code: 387ms)
- GET / 200 in 74ms (next.js: 9ms, application-code: 65ms)
+ GET / 200 in 2.7s (next.js: 2.3s, application-code: 412ms)
+ GET / 200 in 68ms (next.js: 8ms, application-code: 60ms)
+ GET /opengraph-image 200 in 702ms (next.js: 389ms, application-code: 312ms)

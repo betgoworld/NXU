@@ -15,9 +15,14 @@
   color: #777;
 }
 
-.admin-brand strong {
-  font-size: 20px;
-  letter-spacing: -0.04em;
+.admin-brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.admin-logo {
+  height: 16px;
+  width: auto;
 }
 
 .admin-brand span {

@@ -143,7 +143,7 @@ input {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 14px;
   text-transform: uppercase;
 }
 
@@ -153,10 +153,9 @@ input {
 }
 
 .signature__mark {
-  font-size: clamp(40px, 6vw, 88px);
-  font-weight: 600;
-  letter-spacing: -0.05em;
-  line-height: 0.9;
+  display: block;
+  height: clamp(30px, 4.4vw, 64px);
+  width: auto;
 }
 
 .signature__sub {
@@ -290,15 +289,15 @@ input {
 
 .brand {
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
   gap: 12px;
   text-transform: uppercase;
 }
 
 .brand__mark {
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: -0.04em;
+  display: block;
+  height: 18px;
+  width: auto;
 }
 
 .brand__sub {
@@ -867,14 +866,14 @@ input {
 
 .footer__brand {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 10px;
 }
 
-.footer__brand strong {
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: -0.03em;
+.footer__logo {
+  display: block;
+  height: 13px;
+  width: auto;
 }
 
 .footer__brand span,

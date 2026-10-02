@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import { Logo } from "./Logo";
 
 export function Statement() {
   return (
@@ -24,7 +25,7 @@ export function Statement() {
           </Reveal>
           <Reveal amount={0.8} delay={0.2}>
             <span className="signature">
-              <span className="signature__mark">NXU</span>
+              <Logo className="signature__mark" />
               <span className="signature__sub">Next You.</span>
             </span>
           </Reveal>

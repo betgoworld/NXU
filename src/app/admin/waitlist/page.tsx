@@ -11,6 +11,7 @@ import {
   type WaitlistRow,
 } from "@/lib/admin-query";
 import { signOut } from "../actions";
+import { Logo } from "@/components/Logo";
 
 export const dynamic = "force-dynamic";
 
@@ -87,7 +88,7 @@ export default async function AdminWaitlist({
     <main className="admin-main">
       <header className="admin-top">
         <div className="admin-brand">
-          <strong>NXU</strong> <span>Waitlist</span>
+          <Logo className="admin-logo" /> <span>Waitlist</span>
         </div>
         <div className="admin-top__right">
           <span className="admin-muted">{user.email}</span>
