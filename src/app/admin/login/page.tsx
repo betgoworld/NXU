@@ -34,7 +34,7 @@ export default function AdminLogin() {
         </div>
         <label>
           E-mail
-          <input type="email" autoComplete="username" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          <input type="email" inputMode="email" autoCapitalize="none" autoCorrect="off" spellCheck={false} autoComplete="username" value={email} onChange={(e) => setEmail(e.target.value)} required />
         </label>
         <label>
           Senha
