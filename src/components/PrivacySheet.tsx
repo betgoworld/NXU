@@ -20,9 +20,12 @@ export function PrivacyProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
+/** Celular/tablet abrem o modal; desktop (ponteiro fino e tela larga) vai para a página. */
+const isDesktop = () => window.matchMedia("(min-width: 1024px) and (hover: hover) and (pointer: fine)").matches;
+
 /**
- * Link para /privacidade que abre o modal num clique normal.
- * Sem JavaScript, ou com Ctrl/Cmd+clique, abre a página normalmente.
+ * Link para /privacidade. No celular abre o modal; no desktop abre a página.
+ * Sem JavaScript, ou com Ctrl/Cmd+clique, sempre abre a página.
  */
 export function PrivacyLink({ className, children }: { className?: string; children: React.ReactNode }) {
   const openSheet = useOpenPrivacy();
@@ -30,9 +33,8 @@ export function PrivacyLink({ className, children }: { className?: string; child
     <a
       href="/privacidade"
       className={className}
-      aria-haspopup="dialog"
       onClick={(e) => {
-        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0 || isDesktop()) return;
         e.preventDefault();
         openSheet();
       }}
