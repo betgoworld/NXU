@@ -3,6 +3,7 @@
 import { site } from "@/config/site";
 import { track } from "@/lib/analytics";
 import { Logo } from "./Logo";
+import { PrivacyLink } from "./PrivacySheet";
 
 export function Footer() {
   return (
@@ -21,9 +22,7 @@ export function Footer() {
         >
           Instagram
         </a>
-        <a href="/privacidade" className="link">
-          Privacidade
-        </a>
+        <PrivacyLink className="link">Privacidade</PrivacyLink>
       </nav>
       <div className="footer__copy">© 2026 NXU</div>
     </footer>

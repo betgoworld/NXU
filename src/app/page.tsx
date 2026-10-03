@@ -11,6 +11,7 @@ import { Waitlist } from "@/components/Waitlist";
 import { Footer } from "@/components/Footer";
 import { Cursor } from "@/components/Cursor";
 import { PageTracker } from "@/components/PageTracker";
+import { PrivacyProvider } from "@/components/PrivacySheet";
 
 // Página estática, revalidada a cada 5 min (apenas para a contagem opcional).
 export const revalidate = 300;
@@ -37,18 +38,20 @@ export default async function Home() {
   const count = await getWaitlistCount();
   return (
     <MotionProvider>
-      <PageTracker />
-      <Header />
-      <main>
-        <Hero />
-        <Manifesto />
-        <ProductReveal />
-        <Details />
-        <Statement />
-        <Waitlist count={count} />
-      </main>
-      <Footer />
-      <Cursor />
+      <PrivacyProvider>
+        <PageTracker />
+        <Header />
+        <main>
+          <Hero />
+          <Manifesto />
+          <ProductReveal />
+          <Details />
+          <Statement />
+          <Waitlist count={count} />
+        </main>
+        <Footer />
+        <Cursor />
+      </PrivacyProvider>
     </MotionProvider>
   );
 }

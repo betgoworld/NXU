@@ -11,6 +11,7 @@ import { Countdown } from "./Countdown";
 import { EASE_APPLE, Reveal } from "./Reveal";
 import { smoothScrollTo, WAITLIST_ID } from "./scroll";
 import { Logo } from "./Logo";
+import { PrivacyLink } from "./PrivacySheet";
 
 type Status = "idle" | "loading" | "success";
 type Errors = { name?: string; phone?: string; form?: string };
@@ -236,9 +237,7 @@ export function Waitlist({ count }: { count: number | null }) {
                     Ao se cadastrar, você concorda em receber comunicações da NXU pelo WhatsApp sobre o lançamento.
                     Você pode pedir para parar a qualquer momento respondendo “SAIR”. Seus dados são tratados conforme a
                     LGPD e a nossa{" "}
-                    <a href="/privacidade" className="link link--underlined">
-                      Política de Privacidade
-                    </a>
+                    <PrivacyLink className="link link--underlined">Política de Privacidade</PrivacyLink>
                     .
                   </p>
                 </form>
